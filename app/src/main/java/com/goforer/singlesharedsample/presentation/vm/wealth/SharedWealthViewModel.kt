@@ -14,16 +14,14 @@
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.goforer.base.utility.keyboard
+package com.goforer.singlesharedsample.presentation.vm.wealth
 
-import com.goforer.singlesharedsample.presentation.ui.MainActivity
+import com.goforer.singlesharedsample.data.source.model.entity.share.WealthInfo
+import com.goforer.singlesharedsample.presentation.vm.SharedViewModel
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class KeyboardObserver(activity: MainActivity) : BaseKeyboardObserver(activity) {
-    fun addListener(action: (Int) -> Unit) {
-        addListener(object : OnKeyboardListener {
-            override fun onKeyboardChange(status: Int) {
-                action(status)
-            }
-        })
-    }
-}
+@Singleton
+class SharedWealthViewModel
+@Inject
+constructor() : SharedViewModel<WealthInfo?>()
