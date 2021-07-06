@@ -1,0 +1,2 @@
+rootProject.name = "SingleSharedSample"
+include ':app'

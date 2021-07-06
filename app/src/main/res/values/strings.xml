@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SingleSharedSample</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello">Single Shared Sample</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="my_info_fragment_label">My Information</string>
+    <string name="my_wealth_fragment_label">My Wealth</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="name">Name</string>
+    <string name="cellular_phone">Cellular Phone</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="wealth_info">Wealth Information</string>
+    <string name="wealth_type">Wealth Type</string>
+    <string name="wealth_amount">Wealth Amount</string>
+    <string name="wealth_currency">Wealth Currency</string>
+    <string name="wealth_item">Item</string>
+</resources>

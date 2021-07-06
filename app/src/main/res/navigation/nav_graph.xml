@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.goforer.singlesharedsample.presentation.ui.profile.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_FirstFragment_to_MyInfoFragment"
+            app:destination="@id/myInfoFragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/myInfoFragment"
+        android:name="com.goforer.singlesharedsample.presentation.ui.profile.MyInfoFragment"
+        android:label="@string/my_info_fragment_label"
+        tools:layout="@layout/fragment_my_info">
+
+        <action
+            android:id="@+id/action_MyInfoFragment_to_MyWealthFragment"
+            app:destination="@id/myWealthFragment" />
+
+        <argument
+            android:name="description"
+            app:argType="string" />
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myWealthFragment"
+        android:name="com.goforer.singlesharedsample.presentation.ui.profile.MyWealthFragment"
+        android:label="@string/my_wealth_fragment_label"
+        tools:layout="@layout/fragment_my_wealth">
+        <action
+            android:id="@+id/action_MyWealthFragment_self"
+            app:destination="@id/myWealthFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.goforer.sharedatasample"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$androidx_core_ktx_version"
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+
+    implementation "androidx.multidex:multidex:$androidx_multidex_version"
+
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    implementation "androidx.fragment:fragment-ktx:$arch_fragmentVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$arch_lifecycle_extension_version"
+    // alternatively, just ViewModel
+    // alternatively, just LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_livecycle_livedata_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_livedata_ktx"
+    // Lifecycles only (no ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_lifecycle_ktx"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_lifecycle_runtime_ktx"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$arch_lifecycle_version"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_gradle_plugin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_gradle_plugin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_gradle_plugin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_gradle_plugin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_version"
+
+    implementation 'com.google.code.gson:gson:2.8.7'
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.navigation:navigation-fragment-ktx:$arch_nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$arch_nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$arch_nav_version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kaptTest "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
