@@ -27,7 +27,7 @@
             app:destination="@id/myWealthFragment" />
 
         <argument
-            android:name="description"
+            android:name="title"
             app:argType="string" />
 
         <argument

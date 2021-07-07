@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.goforer.singlesharedsample.R
 import com.goforer.singlesharedsample.data.source.model.entity.share.MyInfo
 import com.goforer.singlesharedsample.data.source.model.entity.share.WealthInfo
 import com.goforer.singlesharedsample.databinding.FragmentFirstBinding
@@ -55,8 +56,8 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>() {
                 WealthInfo("Stock", "Samsung", "1000000", "USD")
             )
 
-            val description =  "SingleSharedSample"
-            val direction = FirstFragmentDirections.actionFirstFragmentToMyInfoFragment(description, 100)
+            val title =  getString(R.string.personal_info)
+            val direction = FirstFragmentDirections.actionFirstFragmentToMyInfoFragment(title, 100)
 
             findNavController().navigate(direction)
         }

@@ -34,11 +34,11 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasAndroidInjector {
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var keyboardObserver: KeyboardObserver
+
+    internal lateinit var binding: ActivityMainBinding
 
     internal var onKeyboardChange: ((status: Int) -> Unit) = {}
-
-    private lateinit var keyboardObserver: KeyboardObserver
 
     @Inject
     internal lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>

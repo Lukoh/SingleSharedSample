@@ -21,14 +21,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.goforer.singlesharedsample.R
 import com.goforer.singlesharedsample.data.source.model.entity.share.MyInfo
+import com.goforer.singlesharedsample.data.source.model.entity.share.WealthInfo
 import com.goforer.singlesharedsample.databinding.FragmentMyInfoBinding
 import com.goforer.singlesharedsample.presentation.ui.BaseFragment
 import com.goforer.singlesharedsample.presentation.vm.info.SharedMyInfoViewModel
+import com.goforer.singlesharedsample.presentation.vm.wealth.SharedWealthViewModel
 import javax.inject.Inject
 
 /**
@@ -46,7 +47,7 @@ class MyInfoFragment : BaseFragment<FragmentMyInfoBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText(context, args.description, Toast.LENGTH_LONG).show()
+        mainActivity.binding.toolbar.title = args.title
         observeMyInfo()
         binding.btNextBig.setOnClickListener {
             findNavController().navigate(R.id.action_MyInfoFragment_to_MyWealthFragment)
