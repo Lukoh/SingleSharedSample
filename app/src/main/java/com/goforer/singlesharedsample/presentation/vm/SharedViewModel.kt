@@ -27,10 +27,10 @@ open class SharedViewModel<T> : ViewModel() {
     internal fun share(data: T) {
         sharedData = flow {
             emit(data)
-        }.stateIn(
+        }.shareIn (
             scope = viewModelScope,
-            started = SharingStarted.Eagerly,
-            initialValue = data
+            started = SharingStarted.WhileSubscribed(),
+            replay = 1
         )
     }
 
