@@ -24,4 +24,4 @@ import javax.inject.Singleton
 @Singleton
 class SharedMyInfoViewModel
 @Inject
-constructor() : SharedViewModel<MyInfo?>()
+constructor() : SharedViewModel<MyInfo>()

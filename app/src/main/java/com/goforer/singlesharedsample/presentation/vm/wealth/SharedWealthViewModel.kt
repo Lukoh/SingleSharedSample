@@ -24,4 +24,4 @@ import javax.inject.Singleton
 @Singleton
 class SharedWealthViewModel
 @Inject
-constructor() : SharedViewModel<WealthInfo?>()
+constructor() : SharedViewModel<WealthInfo>()

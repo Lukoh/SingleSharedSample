@@ -43,9 +43,7 @@ class MyWealthFragment : BaseFragment<FragmentMyWealthBinding>() {
 
     private fun observeMyWealth() {
         sharedWealthViewModel.shared {
-            it?.let {
-                fillWealth(it)
-            }
+            fillWealth(it)
         }
     }
 

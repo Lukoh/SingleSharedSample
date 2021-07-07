@@ -55,9 +55,7 @@ class MyInfoFragment : BaseFragment<FragmentMyInfoBinding>() {
 
     private fun observeMyInfo() {
         sharedMyInfoViewModel.shared {
-            it?.let {
-                fillMyInfo(it)
-            }
+            fillMyInfo(it)
         }
     }
 
